@@ -1,0 +1,727 @@
+/* ================================ */
+/* Style HTML  */
+/* ================================ */
+
+html {
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+}
+
+#content{
+    width: 100%;
+    height: 100%;
+}
+
+/* ================================ */
+/* Style Map */
+/* ================================ */
+
+#map-canvas{
+    height: 100%;
+    width: 100%;
+}
+
+/* ================================ */
+/* Style Menu*/
+/* ================================ */
+
+
+@import url(http://fonts.googleapis.com/css?family=Capriola);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    line-height: 1;
+    display: block;
+    position: relative;
+    font-family: Capriola, Helvetica, sans-serif;
+}
+#cssmenu {
+    width: auto;
+    height: 59px;
+    padding-bottom: 4px;
+    z-index: 1;
+}
+#cssmenu.align-right {
+    float: right;
+}
+#cssmenu.align-right ul li {
+    float: right;
+    margin-right: 0;
+    margin-left: 4px;
+}
+#cssmenu.align-right ul li:first-child,
+#cssmenu.align-right ul li:first-child > a {
+    border-bottom-right-radius: 3px;
+}
+#cssmenu #bg-one,
+#cssmenu #bg-two,
+#cssmenu #bg-three,
+#cssmenu #bg-four {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#cssmenu #bg-one {
+    height: 10px;
+    background: #0f71ba;
+}
+#cssmenu #bg-two {
+    height: 59px;
+    z-index: 2;
+}
+#cssmenu #bg-three {
+    bottom: 4px;
+    height: 55px;
+    z-index: 3;
+    background: #222222;
+    background: -moz-linear-gradient(top, #555555 0%, #222222 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #555555), color-stop(100%, #222222));
+    background: -webkit-linear-gradient(top, #555555 0%, #222222 100%);
+    background: -o-linear-gradient(top, #555555 0%, #222222 100%);
+    background: -ms-linear-gradient(top, #555555 0%, #222222 100%);
+    background: linear-gradient(to bottom, #555555 0%, #222222 100%);
+}
+#cssmenu #bg-four {
+    bottom: 4px;
+    height: 55px;
+    z-index: 4;
+}
+#cssmenu ul {
+    height: 59px;
+}
+#cssmenu ul li {
+    float: left;
+    margin-right: 4px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    z-index: 5;
+}
+#cssmenu ul li a {
+    padding: 24px 30px 20px 30px;
+    margin-bottom: 4px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #eeeeee;
+    font-size: 15px;
+    text-decoration: none;
+}
+#cssmenu ul li:first-child,
+#cssmenu ul li:first-child > a {
+    border-bottom-left-radius: 3px;
+}
+#cssmenu ul li:hover,
+#cssmenu ul li.active {
+    background: #0f71ba;
+    background: -moz-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3fa4f0), color-stop(100%, #0f71ba));
+    background: -webkit-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+    background: -o-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+    background: -ms-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+    background: linear-gradient(to bottom, #3fa4f0 0%, #0f71ba 100%);
+}
+#cssmenu ul li a:hover,
+#cssmenu ul li.active > a {
+    color: #ffffff;
+}
+
+
+.control{
+    position: absolute;
+    z-index: 1000;
+    margin: 30px;
+}
+
+/* ================================ */
+/* Style Loading Page*/
+/* ================================ */
+
+
+.btn {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+    background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+    background-color:#ffffff;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display: block;
+    cursor:pointer;
+    color:#666666;
+    font-family:Verdana;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+
+
+.btn:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+    background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+    background-color:#f6f6f6;
+}
+
+#dataType, #mapType, #analysis{
+    font-size:20px;
+    width: 360px;
+    height: 40px;
+}
+
+/* ================================ */
+/* Style Menu Panels */
+/* ================================ */
+.panel{
+    width: 360px;
+    background-color: #ffffff;
+    display: block;
+}
+
+.inner-panel{
+    margin-left: 20px;
+    margin-top: 20px;
+    position: absolute;
+}
+
+.inner-panel span{
+    font-size: 17px;
+    display: block;
+    padding: 2px;
+}
+
+#dataTypeDiv{
+    height: 80px;
+}
+
+#mapTypeDiv{
+    height: 590px;
+}
+
+#mapType-inner div{
+    margin-top: 12px;
+}
+
+#mapType, #analysis{
+    visibility: hidden;
+}
+
+/* ================================ */
+/* Map Menu */
+/* ================================ */
+#panel-type input{
+    display: none;
+}
+
+#panel-type label{
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.selected{
+    background-color: #dcdcdc;
+}
+
+/* ================================ */
+/* Map Style */
+/* ================================ */
+#panel-mapStyle input{
+    display: none;
+}
+
+#panel-mapStyle label{
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+/* ================================ */
+/* Map Gradient */
+/* ================================ */
+#panel-gradient input{
+    display: none;
+}
+
+#panel-gradient label{
+    padding: 4px;
+    display: inline-block;
+    cursor: pointer;
+    width: 40px;
+    height: 23px;
+}
+
+#grad1{
+    background-image: linear-gradient(to bottom, #00f541, #fa0303);
+}
+
+#grad2{
+    background-image: linear-gradient(to bottom, #00f5f5, #fa0303);
+}
+
+#grad3{
+    background-image: linear-gradient(to bottom, #FEF8AF, #712006);
+}
+
+.selectedColor {
+    border: #FF530F 2px solid;
+}
+
+/* Map Radius */
+#panel-radius input{
+    display: none;
+}
+
+#panel-radius label{
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+/* ================================ */
+/* Map Opacity */
+/* ================================ */
+
+#panel-opacity input{
+    display: none;
+}
+
+#panel-opacity label{
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+/* ================================ */
+/* Choose File Style */
+/* ================================ */
+
+.btn-fileChoose {
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+    background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+    background-color:#ffffff;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #dcdcdc;
+    display: inline;
+    cursor:pointer;
+    color:#666666;
+    font-family:Verdana;
+    text-align: center;
+    font-size:15px;
+    width: 110px;
+    position:relative;
+    float: left;
+    overflow: hidden;
+    height: 30px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+
+.btn-fileChoose:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+    background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+    background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+    background-color:#f6f6f6;
+}
+
+.btn-fileChoose input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter:'alpha(opacity=0)';
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+#file-Choose-div{
+    display: block;
+    height: 40px;
+}
+
+
+/* ================================ */
+/* Marker Style */
+/* ================================ */
+
+#panel-marker-color input{
+    display:none
+}
+
+#panel-marker-color label{
+    padding: 4px;
+    display: inline-block;
+    cursor: pointer;
+    width: 40px;
+    height: 23px;
+}
+
+#col1{
+    background-color: #ff0000;
+}
+
+#col2{
+    background-color: #00cc00;
+}
+
+#col3{
+    background-color: #cc00cc;
+}
+
+#col4{
+    background-color: #0000cc;
+}
+
+#col5{
+    background-color: #a0a0a0;
+}
+
+#col6{
+    background-color: #000000;
+}
+
+
+/* ================================ */
+/* Time Variation */
+/* ================================ */
+
+#time-variation input{
+    display: none;
+}
+
+#time-variation label{
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* ================================ */
+/* Layers Clock and Scale */
+/* ================================ */
+
+#layer-clk input{
+    display: none;
+}
+
+#layer-clk label{
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#layer-scale input{
+    display: none;
+}
+
+#layer-scale label{
+    padding: 4px;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#slider{
+    position: absolute;
+    bottom: 7%;
+    left: 35%;
+    width: 500px;
+    z-index: 1000;
+    border: 4px solid #0f71ba;
+}
+
+.sliderStyle.ui-corner-all,
+.sliderStyle .ui-corner-all {
+    border-radius: 0;
+}
+
+.ui-slider .ui-slider-handle{
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#btn-hide{
+    top: 10%;
+    right: 2%;
+    position: fixed;
+    z-index: 1000;
+    border: 5px solid #0f71ba;
+    border-radius: 5px;
+    padding: 4px;
+    color: white;
+    background: #222222;
+    background: -moz-linear-gradient(top, #555555 0%, #222222 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #555555), color-stop(100%, #222222));
+    background: -webkit-linear-gradient(top, #555555 0%, #222222 100%);
+    background: -o-linear-gradient(top, #555555 0%, #222222 100%);
+    background: -ms-linear-gradient(top, #555555 0%, #222222 100%);
+    background: linear-gradient(to bottom, #555555 0%, #222222 100%);
+}
+
+#loading {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgba(255, 255, 255, .8)
+                url("../images/loading2.gif")
+                center no-repeat;
+}
+
+/* ================================ */
+/* Styling for Analysis Field       */
+/* ================================ */
+
+#analysisDiv{
+    height: 600px;
+    overflow-y: scroll;
+    width: 360px;
+    position: relative;
+}
+
+#analysisDiv input[type="text"]{
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    background-color: white;
+    transition: border 0.3s;
+}
+
+#analysis_panel div{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#analysis_panel input{
+    text-align: center;
+    font-size: 16px;
+}
+
+#analysis_panel label{
+    width: 130px;
+    display: inline-block;
+    text-align: center;
+    margin-left: -10px;
+}
+
+/* ================================ */
+/* Styling for Time Layer           */
+/* ================================ */
+
+#timeLayer{
+    background: white;
+    width: 250px;
+    height: 70px;
+    bottom: 5%;
+    right: 10%;
+    position: absolute;
+    z-index: 1000;
+    border-radius: 25px;
+    border: 2px solid #3fa4f0;
+    cursor: none;
+    text-align: center;
+    font-size: 50px;
+}
+
+
+/* ================================ */
+/* Styling for Player Button        */
+/* ================================ */
+
+.btn-player{
+    position: absolute;
+    bottom: 5.5%;
+    left: 31%;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+/* ================================ */
+/* Styling for Input File Button    */
+/* ================================ */
+
+#name-file{
+    margin: 10px;
+}
+
+
+#check_label{
+    float: right;
+    width: 16px;
+    height: 16px;
+    background: url("../images/check_icon.png") center no-repeat;
+}
+
+
+/* ================================ */
+/* Styling for Generation Map Button*/
+/* ================================ */
+#gen_map{
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    margin-left: 90px;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+
+/* ================================ */
+/* Styling for Tutorial Page        */
+/* ================================ */
+
+#content_tutorial{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+p{
+    color: #363637;
+    font-family: 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    text-indent: 30px;
+    margin: 0;
+}
+
+h1{
+    color: #3fa4f0;
+    font-family: 'Rouge Script', cursive;
+    font-size: 80px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 30px 0 50px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #082b34;
+}
+
+h3{
+    color: #3fa4f0;
+    font-family: 'Rouge Script', cursive;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 48px;
+    margin: 30px 0 50px;
+    height: 60px;
+    text-align: left;
+    text-shadow: 1px 1px 2px #082b34;
+}
+
+
+#tutorial{
+    background-color: #fafafa;
+}
+
+#tab{
+    border: solid #555555;
+    width: 100%;
+}
+
+#tab th, tr, td{
+    text-align: center;
+    padding: 8px;
+}
+
+#tab tr:nth-child(even){background-color: #f2f2f2}
+
+strong {
+    font-weight: bold;
+    font-size: 19px;
+    color: #3fa4f0;
+}
+
+.equation{
+    font-style: italic;
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.formulas{
+    margin: 4px;
+    border: solid #555555 .4px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.formulas table{
+    text-align: center;
+}
+
+td.upper_line{ border-top:solid 1px #555555; }
+
+/* ================================ */
+/* Styling for Examples Page        */
+/* ================================ */
+
+#content_examples{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#examples{
+    background-color: #fafafa;
+}
+
+/* ================================ */
+/* Styling for Contacts Page        */
+/* ================================ */
+
+#content_contact{
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#contact{
+    background-color: #fafafa;
+}
