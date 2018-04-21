@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Georeferenced Data Analyzer with statistical and visual analysis">
+    <meta name="keywords" content="Heatmap, Data Analyzer, Georeferenced Data">
+    <meta name="author" content="Wender Xavier">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Geo-Data Visualizer</title>
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDzwm4lOkhUAj0JFsgfC7pys8y5rEW_QNI&libraries=visualization&sensor=true"></script>
+    <script src="scripts/jquery-1.6.2.min.js"></script>
+    <script src="scripts/markerclusterer.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="scripts/script.js"></script>
+</head>
+<body>
+<div id="content">
+    <div id="loading"></div>
+    <div id='cssmenu'>
+        <ul>
+            <li class='active'><a href='#'><span>Geo-Data Visualizer</span></a></li>
+            <li><a href='tutorial.html'><span>Tutorial</span></a></li>
+            <li><a href='examples.html'><span>Examples</span></a></li>
+            <li class='last'><a href='contact.html'><span>Contact</span></a></li>
+        </ul>
+    </div>
+
+    <div id="btn-hide">
+        <input type="checkbox" id="hideMenu" value="OnOff">Hide Menu
+    </div>
+
+    <input type="image" src="images/playButton.png" alt="Play Slider" class="btn-player" id="playSlider"/>
+
+    <div class="sliderStyle" id="slider"></div>
+
+    <div class="control">
+        <div id="menuControl">
+            <button class="btn" id="dataType"> Data </button>
+            <div class="panel" id="dataTypeDiv">
+                <div class="inner-panel">
+                    <div id="fileChoose">
+                        <div id="file-Choose-div">
+                        <span class="btn-fileChoose">
+                        <span>Choose File</span>
+                            <input type="file" accept=".csv" id="input-file">
+                        </span>
+                            <label id="name-file"></label>
+                            <label id="check_label"></label>
+                        </div>
+                    </div>
+                    <div>
+                        <input class="btn" id="gen_map" type="submit" value="Generate Map">
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn" id="mapType"> Map Type </button>
+            <div class="panel" id="mapTypeDiv">
+                <div class="inner-panel" id="mapType-inner">
+                    <div id="panel-type">
+                        <span>Map Type</span>
+                        <input type="radio"  id="marker-btn"/>
+                        <label id="marker" for="marker-btn" class="selected">Marker</label>
+                        <input type="radio" id="cluster-btn"/>
+                        <label id="cluster" for="cluster-btn">Cluster</label>
+                        <input type="radio"  id="heatmap-btn"/>
+                        <label id="heatmap" for="heatmap-btn">Heatmap</label>
+                    </div>
+                    <div id="panel-mapStyle">
+                        <span>Map Style</span>
+                        <input type="radio"  id="radio1"/>
+                        <label id="default" class="selected" for="radio1">Default</label>
+                        <input type="radio" id="radio2"/>
+                        <label id="satellite" for="radio2">Satellite</label>
+                        <input type="radio"  id="radio3"/>
+                        <label id="dark" for="radio3">Dark</label>
+                        <input type="radio"  id="radio4"/>
+                        <label id="light" for="radio4">Light</label>
+                        <input type="radio" id="radio5"/>
+                        <label id="road" for="radio5">Road</label>
+                    </div>
+                    <div id="panel-gradient">
+                        <span>Gradient Color</span>
+                        <input type="radio" id="radio6"/>
+                        <label id="grad1" class="selectedColor" for="radio6"></label>
+                        <input type="radio" id="radio7"/>
+                        <label id="grad2" for="radio7"></label>
+                        <input type="radio" id="radio8"/>
+                        <label id="grad3" for="radio8"></label>
+                    </div>
+                    <div id="panel-marker-color">
+                        <span>Marker Color</span>
+                        <input type="radio" id="color-opt1"/>
+                        <label id="col1" class="selectedColor" for="color-opt1"></label>
+                        <input type="radio" id="color-opt2"/>
+                        <label id="col2" for="color-opt2"></label>
+                        <input type="radio" id="color-opt3"/>
+                        <label id="col3" for="color-opt3"></label>
+                        <input type="radio" id="color-opt4"/>
+                        <label id="col4" for="color-opt4"></label>
+                        <input type="radio" id="color-opt5"/>
+                        <label id="col5" for="color-opt5"></label>
+                        <input type="radio" id="color-opt6"/>
+                        <label id="col6" for="color-opt6"></label>
+                    </div>
+                    <div id="panel-radius">
+                        <span>Radius</span>
+                        <input type="radio"  id="radio9"/>
+                        <label id="rad0"  for="radio9">0%</label>
+                        <input type="radio"  id="radio10"/>
+                        <label id="rad20" class="selected" for="radio10">20%</label>
+                        <input type="radio" id="radio11"/>
+                        <label id="rad40" for="radio11">40%</label>
+                        <input type="radio"  id="radio12"/>
+                        <label id="rad60" for="radio12">60%</label>
+                        <input type="radio"  id="radio13"/>
+                        <label id="rad80" for="radio13">80%</label>
+                        <input type="radio"  id="radio14"/>
+                        <label id="rad100" for="radio14">100%</label>
+                    </div>
+                    <div id="panel-opacity">
+                        <span>Opacity</span>
+                        <input type="radio" id="radio15"/>
+                        <label id="opct0"  for="radio15">0%</label>
+                        <input type="radio"  id="radio16"/>
+                        <label id="opct20" for="radio16">20%</label>
+                        <input type="radio"  id="radio17"/>
+                        <label id="opct40" for="radio17">40%</label>
+                        <input type="radio"  id="radio18"/>
+                        <label id="opct60"  class="selected" for="radio18">60%</label>
+                        <input type="radio"  id="radio19"/>
+                        <label id="opct80" for="radio19">80%</label>
+                        <input type="radio"  id="radio20"/>
+                        <label id="opct100" for="radio20">100%</label>
+                    </div>
+                    <div id="time-variation">
+                        <span>Time Variation</span>
+                        <input type="radio" id="var-min"/>
+                        <label id="min"  for="var-min">Min.</label>
+                        <input type="radio" id="var-hour"/>
+                        <label id="hour"  for="var-hour">Hour</label>
+                        <input type="radio" id="var-day"/>
+                        <label id="day"  for="var-day">Day</label>
+                        <input type="radio" id="var-month"/>
+                        <label id="month"  for="var-month">Month</label>
+                        <input type="radio" id="var-year"/>
+                        <label id="year"  for="var-year">Year</label>
+                        <input type="radio" id="var-static"/>
+                        <label id="static"  class="selected" for="var-static">Static</label>
+                    </div>
+                    <div id="layer-scale">
+                        <span>Insert Scale Layer?</span>
+                        <input type="radio" id="scale-y"/>
+                        <label id="scale-opt1"  for="scale-y">Yes</label>
+                        <input type="radio" id="scale-n"/>
+                        <label id="scale-opt2"  for="scale-n" class="selected">No</label>
+                    </div>
+                    <div id="layer-clk">
+                        <span>Insert Time Layer?</span>
+                        <input type="radio" id="clk-y"/>
+                        <label id="clk-opt1"  for="clk-y">Yes</label>
+                        <input type="radio" id="clk-n"/>
+                        <label id="clk-opt2"  for="clk-n"  class="selected">No</label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" id="analysis"> Statistical Analysis </button>
+            <div class="panel" id="analysisDiv">
+                <div class="inner-panel" id="analysis_panel">
+                    <div><label>Population</label><input type="text" disabled="disabled" value="" id="population"></div>
+                    <div><label>Sum</label><input type="text" disabled="disabled" value="" id="sum"></div>
+                    <div><label>Max: </label><input type="text" disabled="disabled" value="" id="maximum"></div>
+                    <div><label>Min: </label><input type="text" disabled="disabled" value="" id="minimum"></div>
+                    <div><label>Mean: </label><input type="text" disabled="disabled" value="" id="mean"></div>
+                    <div><label>Median: </label><input type="text" disabled="disabled" value="" id="median"></div>
+                    <div><label>Mode: </label><input type="text" disabled="disabled" value="" id="mode"></div>
+                    <div><label>Range: </label><input type="text" disabled="disabled" value="" id="range"></div>
+                    <div><label>Skewness: </label><input type="text" disabled="disabled" value="" id="skewness"></div>
+                    <div><label>Lower Quartile: </label><input type="text" disabled="disabled" value="" id="1quart"></div>
+                    <div><label>Upper Quartile: </label><input type="text" disabled="disabled" value="" id="3quart"></div>
+                    <div><label>Inter Quartile: </label><input type="text" disabled="disabled" value="" id="interquart"></div>
+                    <div><label>Outliers: </label><input type="text" disabled="disabled" value="" id="outliers"></div>
+                    <div><label>Geometric</label><br><label>Mean: </label><input type="text" disabled="disabled" value="" id="geomean"></div>
+                    <div><label>Quartile</label><br><label>Deviation: </label><input type="text" disabled="disabled" value="" id="quartdev"></div>
+                    <div><label>Sample</label><br><label>Variance: </label><input type="text" disabled="disabled" value="" id="variance"></div>
+                    <div><label>Standard</label><br><label>Deviation: </label><input type="text" disabled="disabled" value="" id="standardDev"></div>
+                    <div><label>Coefficient of</label><br><label>Variation: </label><input type="text" disabled="disabled" value="" id="coefVar"></div>
+                    <div><label>Coefficient of</label><br><label>Range: </label><input type="text" disabled="disabled" value="" id="coefRange"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="text" id="timeLayer" value="">
+    <div id="map_canvas" style="width: 100%; height: 93%;"></div>
+</div>
+</body>
+</html>

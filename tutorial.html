@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="Georeferenced Data Analyzer with statistical and visual analysis">
+    <meta name="keywords" content="Heatmap, Data Analyzer, Georeferenced Data">
+    <meta name="author" content="Wender Xavier">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>Geo-Data Visualizer</title>
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="styles/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="scripts/jquery-1.6.2.min.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="scripts/script.js"></script>
+</head>
+<body id="tutorial">
+
+<div id='cssmenu'>
+    <ul>
+        <li><a href='index.html'><span>Geo-Data Visualizer</span></a></li>
+        <li class="active"><a href='#'><span>Tutorial</span></a></li>
+        <li><a href='examples.html'><span>Examples</span></a></li>
+        <li class='last'><a href='contact.html'><span>Contact</span></a></li>
+    </ul>
+</div>
+
+
+<div id="content_tutorial">
+
+    <div>
+        <h1>Geo-Data Visualizer</h1>
+
+        <p>Welcome to Geo-Data Visualizer. You're probably checking out this tutorial because you want to learn more about how Geo-Data Visualizer works. It's our aim to assist the visualization and analysis
+            of georeferenced data, making it more intuitive. We hope you'll use all the system's possibilities to obtain the maximum knowledge of data.
+
+            This tutorial will walk you through the creation of simple visualizations and potentials of the system.</p>
+    </div>
+    <div>
+        <img src="images/data_icon.png" align="left" width="60" height="60">
+        <div>
+            <h3>Input Data</h3>
+
+            <p>
+                Geo-Data Visualizer allows the creation of interactive maps from spreadsheets. In order to create the visualizations, these spreadsheets needs to be structured in an understandable way to the system.
+                There are few and easy steps to get your data ready to be visualized. The first step is converting your spreadsheet into .csv (comma separated values) format, so the system can get these values
+                and separate them according to its respective meaning. The columns of the files must be structured as follow:
+            </p>
+
+            <table id="tab">
+                <tr>
+                    <th>Name</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Load</th>
+                </tr>
+                <tr>
+                    <td>GEO4143</td>
+                    <td>-19.946813</td>
+                    <td>-43.96893</td>
+                    <td>12/31/2012</td>
+                    <td>21:18:22</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>GEO4153</td>
+                    <td>-19.946813</td>
+                    <td>-43.96893</td>
+                    <td>01/01/2013</td>
+                    <td>21:22:22</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>GEO7162</td>
+                    <td>-19.946813</td>
+                    <td>-43.96893</td>
+                    <td>01/02/2013</td>
+                    <td>22:15:22</td>
+                    <td>2</td>
+                </tr>
+            </table>
+            <p>
+                The <strong>Name</strong> column refers to the name of the location, for example a antenna name, or user name, depends on the data. The <strong>Latitude</strong>
+                and <strong>Longitude</strong> columns are the position associated to each <strong>Name</strong>.
+            </p>
+            <p>
+                <strong>Date</strong> and <strong>Time</strong> are associated with the
+                moment that occurred a event or the place where a user was located. These columns must be ordered from lowest to highest time, so the system is capable of slice the moments properly.
+                If you are not going to analyze data between time intervals, you can leave these two columns with blank information. Finally, the <strong>Load</strong> is related to the concentration
+                of users or intensity of phenomena, again, this depends on the data provided.
+
+            </p>
+            <p>
+                If your data is in the required patterns as mentioned above, you are ready to visualize it in the Geo-Data.
+            </p>
+        </div>
+        <div>
+            <img src="images/browse_icon.png" align="left" width="60" height="60">
+            <h3>Visualization</h3>
+
+            <p>
+                After uploading the data in the correct format, and clicking on the "Generate Map" button, the tab "Map Type" will appear in the menu for map creation. This tabs allows some customization,
+                so it is necessary to choose the customization that best suits your data according to your needs. The options of customization are detailed below.
+            </p>
+            <div>
+                <img src="images/map_marker.png" align="left" width="190" height="190" style="margin: 10px; border: solid #555555;">
+                <p>The first step is choosing the Map Type of your visualization. There are three different types of maps available, the first is the <strong>Marker</strong> map. This is one of the most intuitive
+                    and used maps, where a marker is placed on the correspondent position of the database. Clicking on a marker enables users to visualize information about the marker present in the
+                    uploaded data. The color of the marker is also customizable. It important to notice that if two markers are placed in a same location, the information displayed on the click will correspond
+                    to the last marker placed.
+                </p>
+                <img src="images/map_cluster.png" align="right" width="190" height="190" style="margin: 10px; border: solid #555555;">
+                <p>
+                    The <strong>Cluster</strong> map is the second option of visualization. This map group data points that are close and display the total for each group. This map has the advantage of displaying
+                    exact numbers, differently of heatmaps and markers. Clicking on a cluster enables users to visualize information about the cluster. Cluster maps work great when dealing with large data.
+                </p>
+                <img src="images/map_heat.png" align="left" width="190" height="190" style="margin: 10px; border: solid #555555;">
+                <p>
+                    The last option of map available is the <strong>Heatmap</strong> map, which is useful to show density of the provided input data. This type, just like the cluster, is great when dealing with
+                    large data because the users can get instant knowledge at a glance. It renders faster than the other two types of maps, showing better results when dealing with large data and displaying with
+                    time interval. The opacity, gradient color and radius used to create the map are customizable.
+                </p>
+                <p>
+                    The "Map Style" is another customizable setting, where the user can choose between <strong>Default</strong>, <strong>Satellite</strong>, <strong>Dark</strong>, <strong>Light</strong>, and
+                    <strong>Road</strong> map visualizations, improving the visualization and appearance of maps.
+                </p>
+                <div style="text-align: center">
+                    <img src="images/player.png" align="middle" width="600" height="80" style="margin: 10px; border: solid #555555;">
+                </div>
+                <p>
+                    Geo-Data allows the analysis using Time Interval. The allowed intervals are <strong>Minute</strong>, <strong>Hour</strong>, <strong>Day</strong>, <strong>Month</strong>, <strong>Year</strong>,
+                     or <strong>Static</strong> maps where no interval is used. When selecting a interval, a player and a slider appears where you can select the corresponding moment on the slider. As previously
+                    stated, the Date and Time columns of the data must be ordered from lowest to higher, in order to the player and slider work properly.
+                </p>
+                <p>
+                    The generated maps can present useful insights of the data, and to improve such knowledge, we perform statistical analysis of the data that is presented next.
+                </p>
+            </div>
+            <div>
+                <img src="images/analysis_icon.png" align="left" width="70" height="70">
+                <h3>Statistical Analysis</h3>
+
+                <p>
+                    Geo-Data performs and display statistical analysis of the data. If the time interval is enabled, this analysis correspond for each moment of the timeline. The following analysis are
+                    performed:
+                </p>
+                <div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Population</strong> = a
+                        </div>
+                        <p>,where a = population of the input data</p>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Sum</strong> = <font face="Symbol">&#229;</font> x
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Maximum</strong> (<strong>Max</strong>) = greatest value of the data set
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Mimimum</strong> (<strong>Min</strong>) = smallest value of the data set
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <table align="center">
+                                <tr>
+                                    <td rowspan="2"><strong>Mean</strong> =</td>
+                                    <td> <font face="Symbol">&#229;</font> x</td>
+                                </tr>
+                                <tr>
+                                    <td class="upper_line">n</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>where n = number of values</p>
+                    </div>
+                    <div class="formulas">
+                        <p>For an odd number of values</p>
+                        <div class="equation">
+                            <table align="center">
+                                <tr>
+                                    <td rowspan="2"><strong>Median</strong> =</td>
+                                    <td>(n+1)</td>
+                                    <td rowspan="2">th item</td>
+                                </tr>
+                                <tr>
+                                    <td class="upper_line">2</td>
+                                </tr>
+                            </table>
+                            </div>
+                            <p>For an even number of values</p>
+                            <div class="equation">
+                                <table align="center">
+                                    <tr>
+                                        <td rowspan="3"><strong>Median</strong> =</td>
+                                        <td>n</td>
+                                        <td rowspan="2">th item + </td>
+                                        <td>n</td>
+                                        <td rowspan="2">+1 th item</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="upper_line">2</td>
+                                        <td class="upper_line">2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="upper_line" colspan="3">2</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        <p> where n = number of values</p>
+                        </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Mode</strong> = values with most occurencies
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Range</strong> = <strong>Max</strong> - <strong>Min</strong>
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <table align="center">
+                                <tr>
+                                    <td rowspan="2"><strong>Skewness</strong> =</td>
+                                    <td><font face="Symbol">&#229;</font> (<strong>Mean</strong> - x<sub>i</sub>)<sup>3</sup></td>
+                                </tr>
+                                <tr>
+                                    <td class="upper_line">(n-1) (<strong>Standard Deviation</strong>)<sup>3</sup></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>where n = number of values</p>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Lower Quartile</strong> = <strong>Median</strong> of the bottom half of the numbers
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Upper Quartile</strong> = <strong>Median</strong> of the upper half of the numbers
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Inter Quartile</strong> = <strong>Upper Quartile</strong> - <strong>Lower Quartile</strong>
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Outliers</strong> = X if X < <strong>Lower Quartile</strong> - 1.5*<strong>Inter Quartile</strong> or <br> X > <strong>Lower Quartile</strong> + 1.5*<strong>Inter Quartile</strong>
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Geometric Mean</strong> = <font face="Symbol">&#213;</font>(x)<sup>1/n</sup>
+                        </div>
+                        <p> where n = number of values</p>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <table align="center">
+                                <tr>
+                                    <td rowspan="2"><strong>Quartile Deviation</strong> =</td>
+                                    <td>( <strong>Upper Quartile</strong> - <strong>Lower Quartile</strong> )</td>
+                                </tr>
+                                <tr>
+                                    <td class="upper_line">2</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <table align="center">
+                                <tr>
+                                    <td rowspan="2"><strong>Sample Variance</strong> (<font face="Symbol">s</font>)<sup>2</sup> =</td>
+                                    <td><font face="Symbol">&#229;</font> (x - <strong>Mean</strong>)<sup>2</sup></td>
+                                </tr>
+                                <tr>
+                                    <td class="upper_line">n - 1</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p>where n = number of values</p>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <strong>Standard Deviation</strong> = <span style="font-size: 150%;">&radic;</span> <span style="border-top:solid 2px black; padding-top: 5px;"><strong>Variance</strong></span>
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <table align="center">
+                                <tr>
+                                    <td rowspan="2"><strong>Coefficient of Variation</strong> = </td>
+                                    <td><strong>Standard Deviation</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="upper_line"><strong>Mean</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="formulas">
+                        <div class="equation">
+                            <table align="center">
+                                <tr>
+                                    <td rowspan="2"><strong>Coefficient of Range</strong> = </td>
+                                    <td>(<strong>Max</strong> - <strong>Min</strong>)</td>
+                                </tr>
+                                <tr>
+                                    <td class="upper_line">(<strong>Max</strong> + <strong>Min</strong>)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div></div>
+
+</body>
+</html>
